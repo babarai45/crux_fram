@@ -1,0 +1,29 @@
+[package]
+name = "shared"
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+keywords.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["lib", "staticlib", "cdylib"]
+name = "shared"
+
+[features]
+typegen = ["crux_core/typegen"]
+
+[dependencies]
+crux_core.workspace = true
+serde = { workspace = true, features = ["derive"] }
+lazy_static = "1.5.0"
+uniffi = "0.29.1"
+
+[dev-dependencies]
+assert_let_bind = { version = "0.1" }
+
+[target.uniffi-bindgen.dependencies]
+uniffi = { version = "0.29.1", features = ["cli"] }
+
+[build-dependencies]
+uniffi = { version = "0.29.1", features = ["build"] }

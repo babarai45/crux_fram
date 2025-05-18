@@ -1,0 +1,17 @@
+[workspace]
+members = ["shared", "shared_types"]
+resolver = "1"
+
+[workspace.package]
+authors = ["Red Badger Consulting Limited"]
+edition = "2021"
+keywords = ["tap-to-pay"]
+rust-version = "1.68"
+
+[workspace.dependencies]
+anyhow = "1.0.98"
+crux_core = { path = "../../crux_core" }
+serde = "1.0.219"
+
+[workspace.metadata.bin]
+cargo-xcode = { version = "=1.7.0" }

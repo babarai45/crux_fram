@@ -1,0 +1,39 @@
+[package]
+publish = false
+name = "crux_cli"
+version = "0.1.0"
+authors.workspace = true
+edition.workspace = true
+repository.workspace = true
+license.workspace = true
+keywords.workspace = true
+rust-version = "1.86"       # this helps us get the correct rustdoc JSON format version (>=39)
+
+[[bin]]
+name = "crux"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+ascent = "0.8.0"
+camino = "1.1.9"
+cargo_metadata = "=0.15"
+clap = { version = "4.5.37", features = ["derive"] }
+convert_case = "0.8.0"
+env_logger = "0.11.8"
+guppy = "0.17.17"
+heck = "0.5.0"
+iter_tools = "0.28.0"
+lazy-regex = "3.4.1"
+log = "0.4.27"
+rustdoc-types = "=0.35.0"
+serde = { workspace = true, features = ["derive"] }
+serde-generate = "0.31.0"
+serde-reflection = "0.5.0"
+serde_json = "1.0.140"
+thiserror = "2.0.12"
+
+[dev-dependencies]
+insta = { version = "1.42.2" }
+pretty_assertions = "1.4.1"
+rstest = "0.25.0"
